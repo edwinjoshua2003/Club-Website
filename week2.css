@@ -6,16 +6,21 @@
     scroll-behavior: smooth;
 }
 ::-webkit-scrollbar{
-    width: 5px;
+    width: 6px;
+    background: rgba(0, 0, 0, 0.897);
 }
 ::-webkit-scrollbar-track{
     width:5px;
-    background: black;
+    opacity: 0;
 }
 ::-webkit-scrollbar-thumb{
     width: 4px;
     border-radius: 3px;
-    background: rgb(158, 152, 152);
+    background: rgb(117, 113, 113);
+}
+.mainlogo{
+    height: 100px;
+    width: 100px;
 }
 .landing{
     width: 100%;
@@ -30,18 +35,20 @@
     top:0;
     left: 0;
     opacity: 0.7;
-    object-fit:cover;
+    object-fit: cover; /*changes video aspect ratio*/
 }
 
 .navbar{
     position: absolute;
     left: 0;
     top:0;
+    color: rgb(78, 78, 78);
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 40px 100px;
+    margin-bottom: 30%;
 }
 
 .logo{
@@ -80,6 +87,7 @@
 .content{
     position: absolute;
     text-align: center;
+    align-items: center;
     max-width: 100%;
     top: 40%;
     color: white;
@@ -115,7 +123,7 @@
 .domains{
     background: rgb(29, 29, 70);
     color: white;
-    padding: 100px;
+    padding: 100px ;
     text-align: center;
 }
 .domains h2{
@@ -126,7 +134,7 @@
     font-size: 16px;
 }
 .container{
-    width: 80%;
+    width: 90%;
     margin: 40px auto;
     display: flex;
     flex-direction: row;
@@ -135,7 +143,8 @@
 .card{
     border: 2px solid white;
     border-radius: 20px;
-    width: 30%;
+    width: 20%;
+    min-width: 150px;
     margin: 30px;
     padding: 10px 0;
     transition: 0.4s ease-in-out;
@@ -152,6 +161,9 @@
     padding: 10px;
     padding-top: 0;
 }
+.card p{
+    font-size: 1rem;
+}
 
 .contact{
     background: rgb(70, 70, 184);
@@ -166,6 +178,13 @@
 }
 .contact-div img{
     width: 50%;
+    background-color: black;
+    transition: filter 2s ease-in-out;    
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.contact-div img:hover{
+    filter:hue-rotate(360deg);
 }
 form{
     width: 50%;
@@ -173,13 +192,15 @@ form{
     display: flex;
     flex-direction: column;
     background: rgb(70, 70, 184);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
     padding: 50px
 }
 form ::placeholder{
     color: rgba(255, 255, 255, 0.685);
 }
 form input, form textarea{
-    margin: 10px 0;
+    margin-top:10px;
     background: unset;
     padding: 5px;
     outline: none;
@@ -190,6 +211,27 @@ form input, form textarea{
 }
 form input:hover, form textarea:hover{
     border-color: cyan; 
+}
+form span{
+    position: relative;
+    margin-bottom: 10px;
+}
+form span::after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    background-color: rgb(0, 8, 80);
+    height: 2px;
+    width: 0;
+    transition: 0.4s ease-in-out;
+}
+form input:hover{
+    border-color:cyan;
+}
+.i1:focus + .s1::after, .i2:focus + .s2::after, .i3:focus + .s3::after, .i4:focus + .s4::after{
+    left: 0;
+    width: 100%;
 }
 form textarea{
     height: 35px;
@@ -218,7 +260,7 @@ form button:hover{
 }
 
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 900px){
     .navbar ul{
         display: none;
     }
@@ -226,7 +268,7 @@ form button:hover{
         margin: 0 auto;
     }
     .content{
-        top: 20%;
+        top: 30%;
     }
     .content h2{
         font-size: 36px;
@@ -251,10 +293,11 @@ form button:hover{
     }
     .container{
         flex-direction: column;
+        align-items: center;
     }
     .card{
         margin: 10px;
-        width: 95%;
+        width: 300px;
         margin-bottom: 20px;
     }
 
@@ -266,5 +309,13 @@ form button:hover{
     }
     .contact-div img, form{
         width: 100%;
+    }
+    .contact-div img{
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+    form{
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
     }
 }
