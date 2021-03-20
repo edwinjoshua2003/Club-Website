@@ -11,23 +11,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link rel="icon"
-            href="https://techcrunch.com/wp-content/uploads/2018/07/logo-2.png?w=300"
+            href="./imgs/logo.png"
             type="x-icon">
-        
-        <!-- Bootstrap link (Not used)-->
-        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-            crossorigin="anonymous"></script> -->
     </head>
     <body>
         <div class="landing">
-            <video autoplay muted loop>
+            <video preload="auto" autoplay muted loop>
                 <source src="./imgs/video.mp4" type="video/mp4">
             </video>
             <div class="navbar">
-                <a href="#" class="logo">Website</a>
+                <a href="#" class="logo">
+                    <img class="mainlogo" src="./imgs/logo.png" alt="Logo">
+                </a>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#domains">Domains</a></li>
@@ -38,7 +33,8 @@
                     <li><a href="#" class="fa fa-linkedin"></a></li>
                 </ul>
             </div>
-        
+            <br> 
+            <br>
             <div class="content">
                 <h2>Welcome to our website</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae a magnam excepturi, numquam illum rerum
@@ -95,10 +91,14 @@
             <div class="contact-div">
                 <img src="./imgs/contact.png" alt="">
                 <form>
-                    <input type="text" placeholder="Enter your name">
-                    <input type="email" placeholder="Enter your email">
-                    <input type="text" placeholder="Enter your phone">
-                    <textarea placeholder="Enter your question"></textarea>
+                    <input class="i1" type="text" placeholder="Enter your name">
+                    <span class="s1"></span>
+                    <input class="i2" type="email" placeholder="Enter your email">
+                    <span class="s2"></span>
+                    <input class="i3" type="tel" placeholder="Enter your phone">
+                    <span class="s3"></span>
+                    <textarea class="i4" placeholder="Enter your question"></textarea>
+                    <span class="s4"></span>
                     <br>
                     <button>Submit</button>
                 </form>
